@@ -8,6 +8,7 @@ Welcome to the documentation!
 
 
 .. toctree::
+   example
    :maxdepth: 2
    :caption: Contents:
 

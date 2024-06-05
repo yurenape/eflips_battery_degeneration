@@ -32,7 +32,12 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. This
+Use this space to show useful examples of how a project can be used. For now, I will put some information about this template here.
+
+### Folder Structure
+
+#### `docs/`
+The documentation for the project is stored here. The documentation is generated using Sphinx. You can add more documentation here by creating `.rst` files in the `docs` directory and referencing them in the `index.rst` file.
 
 <!-- DOCUMENTATION -->
 
@@ -54,7 +59,6 @@ The documentation will be built in the `_build` directory. Open the `index.html`
 - [x] Add Changelog
 - [x] Add back to top links
 - [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
 - [ ] Multi-language Support
     - [ ] Chinese
     - [ ] Spanish

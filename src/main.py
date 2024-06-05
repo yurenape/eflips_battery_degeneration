@@ -11,6 +11,6 @@ if __name__ == "__main__":
     print("Hello, world!")
 
     NUMBER = random_number()
-    """This is a random number generator. It is guaranteed to be random."""
+    """This is a random number. It is guaranteed to be random."""
 
     print(f"Here's a random number: {NUMBER}")

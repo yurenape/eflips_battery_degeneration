@@ -32,6 +32,8 @@ jobs:
         run: | 
           pytest
         env:
+          # Add the `src` directory to the PYTHONPATH
+          PYTHONPATH: src/:$PYTHONPATH:tests/
           # Add environment variables (used to tell the code it is in testing mode for example) here
           TESTING: "True"
 

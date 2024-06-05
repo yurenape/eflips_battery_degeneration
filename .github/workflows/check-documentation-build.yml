@@ -24,7 +24,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Update pip
         run: |
-          virtualenv venv
+          python -m venv venv
           source venv/bin/activate
           python -m pip install --upgrade pip
       - name: Install Dependencies

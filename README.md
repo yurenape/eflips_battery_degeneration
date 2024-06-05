@@ -39,6 +39,27 @@ Use this space to show useful examples of how a project can be used. For now, I 
 #### `docs/`
 The documentation for the project is stored here. The documentation is generated using Sphinx. You can add more documentation here by creating `.rst` files in the `docs` directory and referencing them in the `index.rst` file.
 
+#### `src/`
+The source code for the project is stored here. You can add more source code files here. You should consider using different files or directories for different parts of your project.
+
+#### `tests/`
+The tests for the project are stored here. You can add more test files here. They should test the low-level building blocks of your project. Maybe there also can be some integration tests, which test the interaction of different parts of your project.
+
+#### `requirements.txt`
+This file lists all the Python packages that are required to run the project. You can add more packages here if you need them.
+
+#### `LICENSE.md`
+This file contains the license for the project. You should choose a license that fits your needs. [Choose an Open Source License](https://choosealicense.com)
+
+#### `README.md`
+This file contains the information about the project. You should fill it out with information about your project.
+
+#### `input/` (optional)
+This directory contains input files for the project. You can add more input files here.
+
+#### `output/` (optional)
+This directory contains output files for the project. You can add more output files here.
+
 <!-- DOCUMENTATION -->
 
 ## Documentation

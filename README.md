@@ -34,6 +34,19 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Use this space to show useful examples of how a project can be used. This
 
+<!-- DOCUMENTATION -->
+
+## Documentation
+
+This project is documented using the [Sphinx](https://www.sphinx-doc.org/en/master/) documentation generator. The documentation is in the `docs` directory. Sphix-Autoapi is used to automatically generate documentation from the source code's docstrings. To build the documentation, run the following command:
+
+```sh
+source venv/bin/activate
+cd docs
+sphinx-build -b html . _build
+```
+
+The documentation will be built in the `_build` directory. Open the `index.html` file in your browser to view the documentation.
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -78,12 +91,11 @@ Distributed under the WTFPL License. See `LICENSE.txt` for more information. **F
 <!-- CONTACT -->
 ## Contact
 
-Lu - ludger.heideœtu-berlin.de
+Lu - ludger.heide@tu-berlin.de
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
+Use this space to list resources you find helpful and would like to give credit to. 

@@ -16,3 +16,8 @@ def no_docu() -> None:
 def more_no_docu() -> None:
     # This method has no documentation, in order to lower the pylint score
     pass
+
+
+def even_more_no_docu() -> None:
+    # This method has no documentation, in order to lower the pylint score
+    pass

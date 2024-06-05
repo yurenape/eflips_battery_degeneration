@@ -1,4 +1,4 @@
-name: Check Documentation on Pull Request
+name: Check Documentation Build
 on:
   - pull_request
   - push
@@ -18,10 +18,10 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-      - name: Set up Python ${{ PYTHON_VERSION }}
+      - name: Set up Python ${PYTHON_VERSION}
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ PYTHON_VERSION }}
+          python-version: ${PYTHON_VERSION}
       - name: Update pip
         run: |
           python -m pip install --upgrade pip

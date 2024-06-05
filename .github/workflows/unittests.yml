@@ -3,10 +3,7 @@ on:
   - pull_request
   - push
   - workflow_dispatch
-env:
-  POETRY_VERSION: "1.7.1"
-  POETRY_URL: https://install.python-poetry.org
-
+  -
 jobs:
   # Label
   unittests:

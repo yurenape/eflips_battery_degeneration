@@ -22,10 +22,7 @@ exclude_patterns = []
 
 # -- Options for AutoAPI -----------------------------------------------------
 
-# At the moment, we are just documenteing the public API in `eflips/depot/api`.
-# This means no documentation exists for the packages "above" it, which breaks
-# the TOC. So we add the `eflips.depot.api` package to the TOC manually.
-autoapi_add_toctree_entry = False
+autoapi_add_toctree_entry = True
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

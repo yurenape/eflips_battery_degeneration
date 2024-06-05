@@ -24,14 +24,18 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Update pip
         run: |
+          virtualenv venv
+          source venv/bin/activate
           python -m pip install --upgrade pip
       - name: Install Dependencies
         run: |
+          source venv/bin/activate
           python -m pip install -r requirements.txt
       # Use the -W flag in the sphinx-build command to treat warnings as errors.
       # Compile the sphinx doc. If no errors or warnings arise, this will result in a green "succeed" mark in GH Actions
       # Otherwise, GH Action will fail.
       - name: Compile Sphinx Documentation (Check for errors)
         run: |
+          source venv/bin/activate
           cd docs/
           sphinx-build -b html . _build -W -a

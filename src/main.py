@@ -9,5 +9,8 @@ from util import random_number
 
 if __name__ == "__main__":
     print("Hello, world!")
+
     NUMBER = random_number()
+    """This is a random number generator. It is guaranteed to be random."""
+
     print(f"Here's a random number: {NUMBER}")

@@ -8,12 +8,8 @@ Welcome to the documentation!
 
 
 .. toctree::
-   usage
-   development
    :maxdepth: 2
    :caption: Contents:
-
-   autoapi/depot/api/index
 
 
 

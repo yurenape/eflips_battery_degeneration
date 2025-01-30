@@ -1,127 +1,107 @@
-<!-- ABOUT THE PROJECT -->
-## About The Project
-##Altersbasierte Fahrtenzuordnung der BVG Busflotte
-
-This is the repository template for Software projects at MPM, TU Berlin. Fill it out with your project's information and you're good to go!
+[![Tests](https://github.com/mpm-tu-berlin/eflips-depot/actions/workflows/unittests.yml/badge.svg)](https://github.com/mpm-tu-berlin/eflips-depot/actions/workflows/unittests.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+# eflips-depot
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+---
 
-### Prerequisites
+Part of the [eFLIPS/simBA](https://github.com/stars/ludgerheide/lists/ebus2030) list of projects.
 
-Here, you should list what software is required to run the project. For example, you might need to install OpenLCA (which version?), whether it runs on Windows, Mac, or Linux or whether a specific Python version is required.
+---
 
-Basically, if it is something you cannot install with a simple `pip install`, you should list it here.
 
-### Installation
+eFLIPS has been developed within several research projects at the Department of Methods of Product Development and
+Mechatronics at the Technische Universität Berlin (see https://www.tu.berlin/mpm/forschung/projekte/eflips).
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+With eFLIPS, electric fleets and depots can be simulated, planned and designed.
+This repository contains only the planning and design tool for depots.
 
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+![eflips_overview](https://user-images.githubusercontent.com/74250473/236144949-4192e840-0e3d-4b65-9f78-af8e01ad9ef3.png)
+
+The repository contains an example for the simulation and planning of an elecric bus depot, which is based on the
+dissertation by Dr.-Ing. Enrico Lauth (see https://depositonce.tu-berlin.de/items/f47662f7-c9ae-4fbf-9e9c-bcd307b73aa7).
+
+## Installation
+
+1. Clone this git repository (or [download a specific release](https://github.com/mpm-tu-berlin/eflips-depot/releases))
+
+    ```bash
+    git clone git@github.com:mpm-tu-berlin/eflips-depot.git
+    ```
+2. Install the packages listed in `poetry.lock` and `pyproject.toml` into your Python environment. Notes:
+    - The suggested Python version os 3.11.*, it may work with other versions, but this is not tested.
+    - Using the [poetry](https://python-poetry.org/) package manager is recommended. It can be installed accoring to the
+      instructions listed [here](https://python-poetry.org/docs/#installing-with-the-official-installer).
+   #### macOS
+    ```bash
+    poetry env use 3.11
+    poetry install
+    ```
+    #### Windows
+   If you are using Windows, you have to provide the full path to the desired Python executable, e.g.:
+    ```bash
+   poetry env use C:\Users\user\AppData\Local\Programs\Python\Python311\python.exe
+   poetry install
    ```
-3. Install pip packages
-   ```sh
-   pip install -r requirements.txt
-   ```
 
-<!-- USAGE EXAMPLES -->
+4. To start a simulation, an existing [eFLIPS-Model](https://github.com/mpm-tu-berlin/eflips-model) database is
+   requires. Once you have that, you can run the script `bin/example.py`
+
 ## Usage
 
-Use this space to show useful examples of how a project can be used. For now, I will put some information about this template here.
+Please refer to the [Documentation section](#documentation) of this Readme for information
+on how to use eFLIPS-Depot.
 
-### Folder Structure
+The API of eFLIPS-Depot can be accessed via ```eFLIPS.depot.api```. A usage example can be found in the
+script `bus_depot/user_example.py`.
 
-#### `docs/`
-The documentation for the project is stored here. The documentation is generated using Sphinx. You can add more documentation here by creating `.rst` files in the `docs` directory and referencing them in the `index.rst` file.
+## Testing
 
-#### `src/`
-The source code for the project is stored here. You can add more source code files here. You should consider using different files or directories for different parts of your project.
+---
 
-#### `tests/`
-The tests for the project are stored here. You can add more test files here. They should test the low-level building blocks of your project. Maybe there also can be some integration tests, which test the interaction of different parts of your project.
+**NOTE**: Be aware that the tests will clear the database specified in the `DATABASE_URL` environment variable. Make sure that you are not using a database that you want to keep.
 
-#### `requirements.txt`
-This file lists all the Python packages that are required to run the project. You can add more packages here if you need them.
+---
 
-#### `LICENSE.md`
-This file contains the license for the project. You should choose a license that fits your needs. [Choose an Open Source License](https://choosealicense.com)
+Testing is done using the `pytest` framework with tests located in the `tests`directory. To run the tests, execute the following command in the root directory of the repository:
 
-#### `README.md`
-This file contains the information about the project. You should fill it out with information about your project.
-
-#### `input/` (optional)
-This directory contains input files for the project. You can add more input files here.
-
-#### `output/` (optional)
-This directory contains output files for the project. You can add more output files here.
-
-<!-- DOCUMENTATION -->
-
+```bash
+   export PYTHONPATH=tests:. # To make sure that the tests can find the eflips package
+   export DATABASE_URL=postgis://postgres:postgres@localhost:5432/postgres # Or whatever your database URL is
+   export DJANGO_SETTINGS_MODULE=tests.api.djangosettings # To make sure that the tests use the correct settings
+   pytest
+```
 ## Documentation
 
-This project is documented using the [Sphinx](https://www.sphinx-doc.org/en/master/) documentation generator. The documentation is in the `docs` directory. Sphix-Autoapi is used to automatically generate documentation from the source code's docstrings. To build the documentation, run the following command:
+Documentation is available on [Read the Docs](https://eflips-depot.readthedocs.io/en/latest/).
 
-```sh
-source venv/bin/activate
-cd docs
-sphinx-build -b html . _build
+To locally create the documentaiton from the docstrings in the code
+using [sphinx-autoapi](https://sphinx-autoapi.readthedocs.io/en/latest/), you can create the documentation execute the
+following command in the root directory of the repository:
+
+```bash
+   cd docs/
+   sphinx-build -b html . _build
 ```
 
-The documentation will be built in the `_build` directory. Open the `index.html` file in your browser to view the documentation.
 
-<!-- ROADMAP -->
-## Roadmap
+## Development
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+We utilize the [GitHub Flow](https://docs.github.com/get-started/quickstart/github-flow) branching structure. This means
+that the `main` branch is always deployable and that all development happens in feature branches. The feature branches
+are merged into `main` via pull requests.
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+We use [black](https://black.readthedocs.io/en/stable/) for code formatting. You can use 
+[pre-commit](https://pre-commit.com/) to ensure the code is formatted correctly before committing. You are also free to
+use other methods to format the code, but please ensure that the code is formatted correctly before committing.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Please make sure that your `poetry.lock` and `pyproject.toml` files are consistent before committing. You can use `poetry check` to check this. This is also checked by pre-commit.
 
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the WTFPL License. See `LICENSE.txt` for more information. **For your project, you should choose a license that fits your needs. [Choose an Open Source License](https://choosealicense.com)**
+This project is licensed under the AGPLv3 license - see the [LICENSE](LICENSE.md) file for details.
 
-<!-- CONTACT -->
-## Contact
+## Funding Notice
 
-Lu - ludger.heide@tu-berlin.de
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. 
+This code was developed as part of the project [eBus2030+]([https://www.eflip.de/](https://www.now-gmbh.de/projektfinder/e-bus-2030/)) funded by the Federal German Ministry for Digital and Transport (BMDV) under grant number 03EMF0402.

@@ -7,7 +7,7 @@
 This repository expands a simulation and planning tool eFLIPS which is the result of a research project of the Department of Methods of Product Development and
 Mechatronics at the Technische Universität Berlin (see https://www.tu.berlin/mpm/forschung/projekte/eflips).
 This program can be found here: [eflips-depot](https://github.com/mpm-tu-berlin/eflips-depot).
-An installation guide for the original program for Ubuntu is found here: [tutorial]()
+An installation guide for the original program for Ubuntu is found here: [tutorial](https://tubcloud.tu-berlin.de/s/BJBH7jjM4pQWn7e)
 
 This extension expands the model to consider the battery degeneration of the bus fleet and simulates it for a period of 12 years and visualizes the average degeneration of the fleet.
 It also creates a steady state scenario based on the averave age of each vehicle type and depot. Based on that it integrates an age-based categorization system to optimize the assignment of the rotations.
@@ -19,6 +19,6 @@ yurena_steadystate.py
 yurena_results.py
 
 For this, they have to access a database and get input a scenario ID. The video tutorial exemplifies how to do that in PyCharm.
-The database used to develop this program can be found here: [eflips_oneweek]().. It simulates one week of the fleet operation
+The database used to develop this program can be found here: [eflips_oneweek](https://tubcloud.tu-berlin.de/s/BJBH7jjM4pQWn7e). It simulates one week of the fleet operation
 If there is another database inserted, the results may vary in the duration of the simulated scenario. Please check the yurena_example file for that.
 

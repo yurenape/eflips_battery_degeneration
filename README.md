@@ -11,7 +11,7 @@ An installation guide for the original program for Ubuntu is found [here](https:
 This extension expands the model to consider the battery degeneration of the bus fleet and simulates it for a period of 12 years and visualizes the average degeneration of the fleet.
 It also creates a steady state scenario based on the averave age of each vehicle type and depot. Based on that it integrates an age-based categorization system to optimize the assignment of the rotations.
 
-To run the extension, you can instert the files in this repository into your bin folder within the eflips-depot repository.
+To run the extension, you can insert the files in this repository into your bin folder within the eflips-depot repository.
 Run the files in the following order:
 yurena_example.py
 yurena_steadystate.py
